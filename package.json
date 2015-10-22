@@ -1,0 +1,71 @@
+{
+  "name": "@watchup/hapi-mongoose",
+  "version": "0.4.0",
+  "description": "A library that maps mongoose models to hapi routes",
+  "main": "dist/lib/index.js",
+  "directories": {
+    "test": "dist/test",
+    "lib": "dist/lib",
+    "example": "example"
+  },
+  "scripts": {
+    "test": "grunt test",
+    "prepublish": "grunt test && grunt"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/watchup/hapi-mongoose.git"
+  },
+  "author": {
+    "name": "watchup",
+    "email": "engineers@watchup.com"
+  },
+  "license": "watchup",
+  "bugs": {
+    "url": "https://github.com/watchup/hapi-mongoose/issues"
+  },
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-mocha-test": "0.12.7",
+    "grunt-ts": "4.2.0-beta.1",
+    "grunt-tsd": "0.2.0-beta.1",
+    "grunt-tslint": "2.3.1-beta",
+    "mocha": "2.2.5",
+    "should": "7.0.1",
+    "typescript": "1.5"
+  },
+  "dependencies": {
+    "async": "1.3.0",
+    "boom": "2.8.0",
+    "hapi": "8.6.1",
+    "lodash": "3.9.3",
+    "mongoose": "4.0.6",
+    "path": "0.11.14",
+    "promise": "7.0.3"
+  },
+  "gitHead": "13c4a6684e483b259cd049a1969e40dea12131ff",
+  "homepage": "https://github.com/watchup/hapi-mongoose#readme",
+  "_id": "@watchup/hapi-mongoose@0.0.8",
+  "_shasum": "e9b37fc73e47419eb2f377891082296aa5748899",
+  "_from": "@watchup/hapi-mongoose@0.0.8",
+  "_npmVersion": "2.13.0",
+  "_nodeVersion": "0.12.7",
+  "_npmUser": {
+    "name": "watchup",
+    "email": "engineers@watchup.com"
+  },
+  "dist": {
+    "shasum": "e9b37fc73e47419eb2f377891082296aa5748899",
+    "tarball": "http://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.0.8.tgz"
+  },
+  "maintainers": [
+    {
+      "name": "watchup",
+      "email": "engineers@watchup.com"
+    }
+  ],
+  "_resolved": "https://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.0.8.tgz"
+}

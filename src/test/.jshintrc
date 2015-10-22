@@ -1,0 +1,29 @@
+{
+  "camelcase" : true,
+  "indent"    : 2,
+  "maxlen"    : 120,
+  "trailing"  : true,
+  "bitwise"   : true,
+  "curly"     : true,
+  "eqeqeq"    : true,
+  "forin"     : true,
+  "noarg"     : true,
+  "noempty"   : true,
+  "nonew"     : true,
+  "undef"     : true,
+  "unused"    : true,
+  "devel"     : true,
+  "node"      : true,
+  "sub"       : true,
+  "quotmark"  : "single",
+  "predef"    : [
+    "beforeEach",
+    "afterEach",
+    "before",
+    "after",
+    "describe",
+    "it",
+    "xdescribe",
+    "xit"
+  ]
+}

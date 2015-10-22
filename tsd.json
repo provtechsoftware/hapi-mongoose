@@ -1,0 +1,39 @@
+{
+  "version": "v4",
+  "repo": "gedaiu/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "async/async.d.ts": {
+      "commit": "ac3a1f059f655059484d6aa5ba1f0f85908ae06c"
+    },
+    "bluebird/bluebird.d.ts": {
+      "commit": "e1182d56ccb192379eade6055d9ba3fb6a0bacc4"
+    },
+    "node/node.d.ts": {
+      "commit": "7bab855ae33d79e86da1eb6c73a7f7eab2676ddb"
+    },
+    "hapi/hapi.d.ts": {
+      "commit": "1559f4de215e6facdebada52ae5dee55b071b82d"
+    },
+    "mongoose/mongoose.d.ts": {
+      "commit": "e1182d56ccb192379eade6055d9ba3fb6a0bacc4"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "e1182d56ccb192379eade6055d9ba3fb6a0bacc4"
+    },
+    "should/should.d.ts": {
+      "commit": "e1182d56ccb192379eade6055d9ba3fb6a0bacc4"
+    },
+    "boom/boom.d.ts": {
+      "commit": "6f04d25ad38982d372cc3cda62fa4c0eef9e24d7"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "6f04d25ad38982d372cc3cda62fa4c0eef9e24d7"
+    },
+    "promises-a-plus/promises-a-plus.d.ts": {
+      "commit": "1559f4de215e6facdebada52ae5dee55b071b82d"
+    }
+  }
+}

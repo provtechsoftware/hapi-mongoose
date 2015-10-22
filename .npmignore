@@ -1,0 +1,6 @@
+.DS_Store
+.settings
+.tscache/
+node_modules/
+.idea
+typings/
