@@ -1,7 +1,44 @@
 {
   "name": "@watchup/hapi-mongoose",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "A library that maps mongoose models to hapi routes",
+  "keywords": ["hapi", "mongoose", "hapi-mongoose"],
+  "homepage": "https://github.com/watchup/hapi-mongoose#readme",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/watchup/hapi-mongoose.git"
+  },
+  "bugs": {
+    "url": "https://github.com/watchup/hapi-mongoose/issues"
+  },
+  "author": {
+    "name": "watchup",
+    "email": "engineers@watchup.com"
+  },
+  "contributors": [
+    {
+      "name": "Bogdan Szabo",
+      "email": "bogdan@watchup.com",
+      "url": "https://github.com/gedaiu"
+    },
+    {
+      "name": "Adriana Saroz",
+      "email": "adriana@watchup.com",
+      "url": "https://github.com/adriana-saroz"
+    },
+    {
+      "name": "David Charbonnier",
+      "email": "david@watchup.com",
+      "url": "https://github.com/dcharbonnier"
+    }
+  ],
+  "maintainers": [
+    {
+      "name": "watchup",
+      "email": "engineers@watchup.com"
+    }
+  ],
   "main": "dist/lib/index.js",
   "directories": {
     "test": "dist/test",
@@ -12,20 +49,14 @@
     "test": "grunt test",
     "prepublish": "grunt test && grunt"
   },
-  "engines": {
-    "node": ">= 0.10.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/watchup/hapi-mongoose.git"
-  },
-  "author": {
-    "name": "watchup",
-    "email": "engineers@watchup.com"
-  },
-  "license": "watchup",
-  "bugs": {
-    "url": "https://github.com/watchup/hapi-mongoose/issues"
+  "dependencies": {
+    "async": "1.3.0",
+    "boom": "2.8.0",
+    "hapi": "8.6.1",
+    "lodash": "3.9.3",
+    "mongoose": "4.0.6",
+    "path": "0.11.14",
+    "promise": "7.0.3"
   },
   "devDependencies": {
     "grunt": "0.4.5",
@@ -37,20 +68,13 @@
     "should": "7.0.1",
     "typescript": "1.5"
   },
-  "dependencies": {
-    "async": "1.3.0",
-    "boom": "2.8.0",
-    "hapi": "8.6.1",
-    "lodash": "3.9.3",
-    "mongoose": "4.0.6",
-    "path": "0.11.14",
-    "promise": "7.0.3"
+  "engines": {
+    "node": ">= 0.10.0"
   },
-  "gitHead": "13c4a6684e483b259cd049a1969e40dea12131ff",
-  "homepage": "https://github.com/watchup/hapi-mongoose#readme",
-  "_id": "@watchup/hapi-mongoose@0.0.8",
-  "_shasum": "e9b37fc73e47419eb2f377891082296aa5748899",
-  "_from": "@watchup/hapi-mongoose@0.6.1",
+  "gitHead": "5ddc9dfeaa2f19646387d3ad740e20809905053a",
+  "_id": "@watchup/hapi-mongoose@0.6.2",
+  "_shasum": "5ddc9dfeaa2f19646387d3ad740e20809905053a",
+  "_from": "@watchup/hapi-mongoose@0.6.2",
   "_npmVersion": "2.13.0",
   "_nodeVersion": "0.12.7",
   "_npmUser": {
@@ -58,14 +82,8 @@
     "email": "engineers@watchup.com"
   },
   "dist": {
-    "shasum": "e9b37fc73e47419eb2f377891082296aa5748899",
-    "tarball": "http://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.0.8.tgz"
+    "shasum": "5ddc9dfeaa2f19646387d3ad740e20809905053a",
+    "tarball": "http://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.6.2.tgz"
   },
-  "maintainers": [
-    {
-      "name": "watchup",
-      "email": "engineers@watchup.com"
-    }
-  ],
-  "_resolved": "https://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.0.8.tgz"
+  "_resolved": "https://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.6.2.tgz"
 }
