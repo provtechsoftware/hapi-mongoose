@@ -1,6 +1,6 @@
 {
   "name": "@watchup/hapi-mongoose",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "A library that maps mongoose models to hapi routes",
   "main": "dist/lib/index.js",
   "directories": {
@@ -50,7 +50,7 @@
   "homepage": "https://github.com/watchup/hapi-mongoose#readme",
   "_id": "@watchup/hapi-mongoose@0.0.8",
   "_shasum": "e9b37fc73e47419eb2f377891082296aa5748899",
-  "_from": "@watchup/hapi-mongoose@0.0.8",
+  "_from": "@watchup/hapi-mongoose@0.6.1",
   "_npmVersion": "2.13.0",
   "_nodeVersion": "0.12.7",
   "_npmUser": {
