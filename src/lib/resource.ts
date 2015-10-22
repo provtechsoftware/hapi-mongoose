@@ -5,7 +5,7 @@
 
 import * as mongoose from 'mongoose';
 import * as hapi from 'hapi';
-import * as routing from './routing/routing';
+import * as routing from './routing/Routing';
 import {HapiPlugin} from './index';
 import * as _ from 'lodash';
 
