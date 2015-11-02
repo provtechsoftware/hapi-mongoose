@@ -27,7 +27,7 @@ export class PutResponse extends ABaseResponse {
     let data = this._resource.importItem(this._request.payload[this._rootName]);
 
     model.schema.eachPath((path: string, type: any) => {
-      if (!data[path] && ['__v', '_id'].indexOf(path) === -1 && this._resource.isExposed(path)) {
+      if (!data.hasOwnProperty(path) && ['__v', '_id'].indexOf(path) === -1 && this._resource.isExposed(path)) {
         data[path] = null;
       }
     });
