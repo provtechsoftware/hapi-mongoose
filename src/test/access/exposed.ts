@@ -248,6 +248,7 @@ describe('Exposing fields', () => {
         .then((res: any) => {
           test.model.findById(id, (err: any, record: any) => {
             record.name.should.equal('new name');
+            record.value.should.equal('some value');
             should(record.flag).equal(null);
             done();
           });
@@ -262,10 +263,12 @@ describe('Exposing fields', () => {
     item.save(() => {
       let id = item._id.toString();
       test.server.createRequest()
-        .payload('exposetest', { flag: false })
+        .payload('exposetest', { name: 'new name', flag: false })
         .put('/exposetests/' + id)
         .then((res: any) => {
           test.model.findById(id, (err: any, record: any) => {
+            record.name.should.equal('new name');
+            record.value.should.equal('some value');
             record.flag.should.equal(false);
             done();
           });
