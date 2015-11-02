@@ -1,6 +1,6 @@
 {
   "name": "@watchup/hapi-mongoose",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "A library that maps mongoose models to hapi routes",
   "keywords": ["hapi", "mongoose", "hapi-mongoose"],
   "homepage": "https://github.com/watchup/hapi-mongoose#readme",
@@ -72,9 +72,9 @@
     "node": ">= 0.10.0"
   },
   "gitHead": "5ddc9dfeaa2f19646387d3ad740e20809905053a",
-  "_id": "@watchup/hapi-mongoose@0.6.3",
+  "_id": "@watchup/hapi-mongoose@0.6.4",
   "_shasum": "5ddc9dfeaa2f19646387d3ad740e20809905053a",
-  "_from": "@watchup/hapi-mongoose@0.6.3",
+  "_from": "@watchup/hapi-mongoose@0.6.4",
   "_npmVersion": "2.13.0",
   "_nodeVersion": "0.12.7",
   "_npmUser": {
@@ -83,7 +83,7 @@
   },
   "dist": {
     "shasum": "5ddc9dfeaa2f19646387d3ad740e20809905053a",
-    "tarball": "http://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.6.3.tgz"
+    "tarball": "http://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.6.4.tgz"
   },
-  "_resolved": "https://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.6.3.tgz"
+  "_resolved": "https://registry.npmjs.org/@watchup/hapi-mongoose/-/hapi-mongoose-0.6.4.tgz"
 }
