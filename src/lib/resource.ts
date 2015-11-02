@@ -127,31 +127,32 @@ export default class Resource {
     return _.reduce<string, boolean>(
       keys,
       (value: boolean, key: string): boolean => {
-        return value && this.hasAliasedKey(key) && this.isVisibleKey(key);
+        return value && this.isValidKey(key);
       },
       true);
   }
 
-  hasAliasedKey(aliasedKey: string): boolean {
-    let unaliasedKey = this.unaliasKey(aliasedKey);
+  isValidKey(key: string): boolean {
+    if (key.indexOf('_') !== -1) {
+      return false;
+    }
+    var unaliasedKey = this.unaliasKey(key);
+    if (unaliasedKey !== key) {
+      return this.isExposed(unaliasedKey);
+    } else {
+      return !this.isAliased(key) && this.isExposed(key);
+    }
+  }
 
-    for (let key in this.options.exposed) {
-      if (this.options.exposed.hasOwnProperty(key)) {
-        if (key === unaliasedKey || key.indexOf(unaliasedKey + '.') === 0) {
+  isExposed(key: string): boolean {
+    for (let exposeKey in this.options.exposed) {
+      if (this.options.exposed.hasOwnProperty(exposeKey)) {
+        if ((exposeKey === key || exposeKey.indexOf(key + '.') === 0) && this.options.exposed[exposeKey] === true) {
           return true;
         }
       }
     }
-
     return false;
-  }
-
-  isVisibleKey(key: string): boolean {
-    return key.indexOf('_') !== 0 && !this.isAliased(key) && this.isExposed(key);
-  }
-
-  isExposed(key: string): boolean {
-    return !this.options.exposed || !this.options.exposed.hasOwnProperty(key) || this.options.exposed[key] === true;
   }
 
   referencedCollection(key: string): string {
