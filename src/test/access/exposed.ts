@@ -21,7 +21,8 @@ function serverSetup(testSetup: ITestSetup, name: string, exposed?: HashMapBoole
   return (done: MochaDone) => {
     let testModel = mongoose.model(name, new mongoose.Schema({
       name: String,
-      value: String
+      value: String,
+      flag: Boolean
     }));
 
     let options: IResourceOptions;
@@ -43,7 +44,7 @@ function serverSetup(testSetup: ITestSetup, name: string, exposed?: HashMapBoole
   };
 };
 
-describe('exposed fields', () => {
+describe('Exposed fields', () => {
   let testModel: mongoose.Model<mongoose.Document>;
 
   before((done: MochaDone) => {
@@ -127,7 +128,7 @@ describe('exposed fields', () => {
   });
 });
 
-describe('fieldProjection', () => {
+describe('Field projection', () => {
   let testModel: mongoose.Model<mongoose.Document>;
 
   before((done: MochaDone) => {
@@ -166,7 +167,7 @@ describe('Exposing fields', () => {
   });
 
   it('should expose specified fields for get lists', (done: MochaDone) => {
-    let item = new test.model({ name: 'some name', value: 'some value' });
+    let item = new test.model({ name: 'some name', value: 'some value', flag: true });
 
     item.save(() => {
       let id = item._id.toString();
@@ -175,7 +176,7 @@ describe('Exposing fields', () => {
         .get('/exposetests')
         .then((res: any) => {
           let result = JSON.parse(res.result);
-          result['exposetests'][0].should.have.keys('id', 'name');
+          result['exposetests'][0].should.have.keys('id', 'name', 'flag');
           done();
         })
         .end(done);
@@ -183,7 +184,7 @@ describe('Exposing fields', () => {
   });
 
   it('should expose specified fields for get by id', (done: MochaDone) => {
-    let item = new test.model({ name: 'some name', value: 'some value' });
+    let item = new test.model({ name: 'some name', value: 'some value', flag: true });
 
     item.save(() => {
       let id = item._id.toString();
@@ -192,7 +193,7 @@ describe('Exposing fields', () => {
         .get('/exposetests/' + id)
         .then((res: any, done: MochaDone) => {
           let result = JSON.parse(res.result);
-          result['exposetest'].should.have.keys('id', 'name');
+          result['exposetest'].should.have.keys('id', 'name', 'flag');
           done();
         })
         .end(done);
@@ -235,6 +236,47 @@ describe('Exposing fields', () => {
     });
   });
 
+  it('should set exposed missing payload fields to null on PUT', (done: MochaDone) => {
+    let item = new test.model({ name: 'some name', value: 'some value', flag: true });
+
+    item.save(() => {
+      let id = item._id.toString();
+
+      test.server.createRequest()
+        .payload('exposetest', { name: 'new name' })
+        .put('/exposetests/' + id)
+        .then((res: any) => {
+          test.model.findById(id, (err: any, record: any) => {
+            record.name.should.equal('new name');
+            record.value.should.equal('some value');
+            should(record.flag).equal(null);
+            done();
+          });
+        })
+        .end(done);
+    });
+  });
+
+  it('should keep false values for exposed fields when trying to PUT',  (done: MochaDone) => {
+    let item = new test.model({ name: 'some name', value: 'some value', flag: true });
+
+    item.save(() => {
+      let id = item._id.toString();
+      test.server.createRequest()
+        .payload('exposetest', { name: 'new name', flag: false })
+        .put('/exposetests/' + id)
+        .then((res: any) => {
+          test.model.findById(id, (err: any, record: any) => {
+            record.name.should.equal('new name');
+            record.value.should.equal('some value');
+            record.flag.should.equal(false);
+            done();
+          });
+        })
+        .end(done);
+    });
+  });
+
   it('should not set unexposed values to null when trying to PUT', (done: MochaDone) => {
     let item = new test.model({ name: 'some name', value: 'some value' });
 
@@ -256,11 +298,11 @@ describe('Exposing fields', () => {
 
   it('should not return unexposed fields on POST', (done: MochaDone) => {
     test.server.createRequest()
-      .payload('exposetest', { name: 'new name' })
+      .payload('exposetest', { name: 'new name', flag: true})
       .post('/exposetests')
       .then((res: any, done: MochaDone) => {
         var result = JSON.parse(res.result);
-        result.exposetest.should.have.keys('id', 'name');
+        result.exposetest.should.have.keys('id', 'name', 'flag');
         done();
       })
       .end(done);
@@ -268,7 +310,7 @@ describe('Exposing fields', () => {
 
 
   it('should not return unexposed fields on PUT', (done: MochaDone) => {
-    let item = new test.model({ name: 'some name', value: 'some value' });
+    let item = new test.model({ name: 'some name', value: 'some value', flag: true });
 
     item.save(() => {
       let id = item._id.toString();
@@ -278,7 +320,7 @@ describe('Exposing fields', () => {
         .put('/exposetests/' + id)
         .then((res: any, done: MochaDone) => {
           var result = JSON.parse(res.result);
-          result.exposetest.should.have.keys('id', 'name');
+          result.exposetest.should.have.keys('id', 'name', 'flag');
           done();
         })
         .end(done);
@@ -286,7 +328,7 @@ describe('Exposing fields', () => {
   });
 
   it('should not return unexposed fields on PATCH', (done: MochaDone) => {
-    let item = new test.model({ name: 'some name', value: 'some value' });
+    let item = new test.model({ name: 'some name', value: 'some value', flag: true });
 
     item.save(() => {
       let id = item._id.toString();
@@ -296,7 +338,7 @@ describe('Exposing fields', () => {
         .patch('/exposetests/' + id)
         .then((res: any, done: MochaDone) => {
           var result = JSON.parse(res.result);
-          result.exposetest.should.have.keys('id', 'name');
+          result.exposetest.should.have.keys('id', 'name', 'flag');
           done();
         })
         .end(done);
