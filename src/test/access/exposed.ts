@@ -236,7 +236,7 @@ describe('Exposing fields', () => {
     });
   });
 
-  it('should set exposed fields that were not part of the payload to null when trying to PUT', (done: MochaDone) => {
+  it('should set exposed missing payload fields to null on PUT', (done: MochaDone) => {
     let item = new test.model({ name: 'some name', value: 'some value', flag: true });
 
     item.save(() => {
