@@ -43,14 +43,17 @@ function serverSetup(testSetup: ITestSetup, name: string, alias?: HashMapString)
 };
 
 describe('Alias', () => {
+
   describe('default fields', () => {
     var test: ITestSetup = <ITestSetup>{};
     before(serverSetup(test, 'aliasIdTest'));
 
     after((done: MochaDone) => {
-      test.server.stop(() => {
-          test.model.remove({}, done);
-      });
+      test.server.stop(done);
+    });
+
+    afterEach((done: MochaDone) => {
+      test.model.remove({}, done);
     });
 
     it('should alias _id to id by default', (done: MochaDone) => {
