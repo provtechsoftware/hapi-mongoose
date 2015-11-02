@@ -79,7 +79,13 @@ describe('Exposed fields', () => {
     resource.options.exposed['__v'].should.equal(true);
   });
 
-  describe('unspeciffeid fields', () => {
+  it('should consider any additional field names as unexposed', () => {
+    let resource = new Resource(testModel);
+    resource.isExposed('name').should.equal(true);
+    resource.isExposed('name2').should.equal(false);
+  });
+
+  describe('unspecified fields', () => {
     it('should be set false when there is an expose:true', () => {
       let resource = new Resource(testModel, {
         exposed: {
