@@ -30,6 +30,20 @@ export class HapiPlugin {
     };
   }
 
+  private static __castResources(resources: Array<mongoose.Model<mongoose.Document>|Resource>): Resource[] {
+    return _.map(resources, (item: mongoose.Model<mongoose.Document>|Resource) => {
+      let result: Resource;
+
+      if (item instanceof Resource) {
+        result = item;
+      } else {
+        result = new Resource(<mongoose.Model<mongoose.Document>>item);
+      }
+
+      return result;
+    });
+  }
+
   register: any = (server: hapi.Server, options: IOptions, next: any) => {
 
     if (options.path) {
@@ -70,18 +84,5 @@ export class HapiPlugin {
       resource.bindRoutes(server, this.__path);
     });
   };
-
-  private static __castResources(resources: Array<mongoose.Model<mongoose.Document>|Resource>): Resource[] {
-    return _.map(resources, (item: mongoose.Model<mongoose.Document>|Resource) => {
-      let result: Resource;
-
-      if (item instanceof Resource) {
-        result = item;
-      } else {
-        result = new Resource(<mongoose.Model<mongoose.Document>>item);
-      }
-
-      return result;
-    });
-  }
 }
+
