@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/%40watchup%2Fhapi-mongoose.svg)](https://badge.fury.io/js/%40watchup%2Fhapi-mongoose)
-[![Dependency Status](https://david-dm.org/watchup/hapi-mongoose.svg)
-[![devDependency Status](https://david-dm.org/watchup/hapi-mongoose/dev-status.svg)
+[![Dependency Status](https://david-dm.org/watchup/hapi-mongoose.svg?style=flat)](https://david-dm.org/watchup/hapi-mongoose)
+[![devDependency Status](https://david-dm.org/watchup/hapi-mongoose/dev-status.svg?style=flat)](https://david-dm.org/watchup/hapi-mongoose#info=devDependencies)
 
 # Summary
 
