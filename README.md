@@ -4,28 +4,28 @@
 
 # Summary
 
-An Hapi.js plugin that maps mongoose models to routes written in TypeScript 1.4
+A Hapi.js plugin that maps mongoose models to routes written in TypeScript 1.5 that match Ember Data requirements
 
 # Quick Example
 
 	var hapiMongoose = require('../dist/lib');
 	var hapi = require('hapi');
 	var mongoose = require('mongoose');
-	
+
 	var myModel = mongoose.model('myModel', new mongoose.Schema({
 		name: String
 	}));
-	
+
 	var server = new hapi.Server();
 	server.connection({port: 3000});
-	
+
 	server.register({
 		register: new hapiMongoose.HapiPlugin(), options: {
 			resources: [myModel],
 			path: '/api'
 		}
 	});
-	
+
 	server.start(function () {
 	console.log('Server running at:', server.info.uri);
 	});
