@@ -3,5 +3,5 @@ node_js:
   - "stable"
   - "0.12"
 services: mongodb
-before_script:
+before_install:
   - npm install grunt-cli -g
