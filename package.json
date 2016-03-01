@@ -2,7 +2,11 @@
   "name": "@watchup/hapi-mongoose",
   "version": "0.6.2",
   "description": "A library that maps mongoose models to hapi routes",
-  "keywords": ["hapi", "mongoose", "hapi-mongoose"],
+  "keywords": [
+    "hapi",
+    "mongoose",
+    "hapi-mongoose"
+  ],
   "homepage": "https://github.com/watchup/hapi-mongoose#readme",
   "license": "MIT",
   "repository": {
@@ -66,6 +70,7 @@
     "grunt-tslint": "2.3.1-beta",
     "mocha": "2.2.5",
     "should": "7.0.1",
+    "tslint": "3.5.0",
     "typescript": "1.5"
   },
   "engines": {
