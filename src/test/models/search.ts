@@ -60,6 +60,7 @@ describe('Searching records', () => {
       server.createRequest()
         .get('/testsearchmodels?search=item1')
         .then((res: any, done: MochaDone) => {
+          console.log(res);
           let result = JSON.parse(res.result);
           result.testsearchmodels.length.should.equal(1);
           result.meta.page.total.should.equal(1);
@@ -73,6 +74,7 @@ describe('Searching records', () => {
       server.createRequest()
         .get('/testsearchmodels?search=item')
         .then((res: any, done: MochaDone) => {
+          console.log(res);
           let result = JSON.parse(res.result);
           result.testsearchmodels.length.should.equal(1);
           result.testsearchmodels[0].name.should.equal('other item');
