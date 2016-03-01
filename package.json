@@ -47,7 +47,7 @@
   },
   "scripts": {
     "test": "grunt test",
-    "prepublish": "grunt test && grunt"
+    "prepublish": "grunt"
   },
   "engines": {
     "node": ">= 5.5.0"

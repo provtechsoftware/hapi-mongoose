@@ -19,5 +19,3 @@ addons:
       - mongodb-org-server
       - mongodb-org-shell
 
-before_script:
-  - sleep 15
