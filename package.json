@@ -23,7 +23,7 @@
     "name": "watchup",
     "email": "engineers@watchup.com"
   },
-  "license": "watchup",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/watchup/hapi-mongoose/issues"
   },
