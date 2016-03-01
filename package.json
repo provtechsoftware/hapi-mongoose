@@ -60,7 +60,8 @@
     "lodash": "3.9.3",
     "mongoose": "4.0.6",
     "path": "0.11.14",
-    "promise": "7.0.3"
+    "promise": "7.0.3",
+    "tslint": "^2.3.1-beta"
   },
   "devDependencies": {
     "grunt": "0.4.5",
@@ -70,7 +71,7 @@
     "grunt-tslint": "2.3.1-beta",
     "mocha": "2.2.5",
     "should": "7.0.1",
-    "tslint": "3.5.0",
+    "tslint": "2.3.1-beta",
     "typescript": "1.5"
   },
   "engines": {
