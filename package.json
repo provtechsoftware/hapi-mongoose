@@ -41,7 +41,7 @@
   "dependencies": {
     "async": "1.5.2",
     "boom": "3.1.2",
-    "hapi": "8.6.1",
+    "hapi": "11.1.4",
     "lodash": "4.5.1",
     "mongoose": "4.4.5",
     "path": "0.12.7",
