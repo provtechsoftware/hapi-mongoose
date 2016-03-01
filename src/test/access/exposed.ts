@@ -78,7 +78,7 @@ describe('exposed fields', () => {
     resource.options.exposed['__v'].should.equal(true);
   });
 
-  describe('unspeciffeid fields', () => {
+  describe('unspecified fields', () => {
     it('should be set false when there is an expose:true', () => {
       let resource = new Resource(testModel, {
         exposed: {

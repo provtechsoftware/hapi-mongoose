@@ -122,7 +122,7 @@ describe('Replacing records (PUT)', () => {
       .end(done);
   });
 
-  it('should return 404 for inexistent ids', (done: MochaDone) => {
+  it('should return 404 for nonexistent ids', (done: MochaDone) => {
     test.server.createRequest()
       .payload('putmodeltest', { name: 'second' })
       .put('/putmodeltests/aaaaaaaaaaaaaaaaaaaaaaaa')
@@ -130,7 +130,7 @@ describe('Replacing records (PUT)', () => {
       .end(done);
   });
 
-  it('should return 404 for inexistent ids and if-match header is present', (done: MochaDone) => {
+  it('should return 404 for nonexistent ids and if-match header is present', (done: MochaDone) => {
     test.server.createRequest()
       .header('If-Match', '"v:9999"')
       .payload('putmodeltest', { name: 'second' })
