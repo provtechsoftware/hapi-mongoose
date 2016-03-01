@@ -22,7 +22,8 @@ type IResourceOptions = {
   pagination?: {
     limit: number
   },
-  alias?: HashMapString
+  alias?: HashMapString,
+  fieldProjection?: HashMapBoolean
 }
 
 type IResourceOptionsExpanded = {

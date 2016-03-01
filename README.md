@@ -1,3 +1,8 @@
+[![Build Status](https://travis-ci.org/watchup/hapi-mongoose.svg?branch=master)](https://travis-ci.org/watchup/hapi-mongoose)
+[![npm version](https://badge.fury.io/js/%40watchup%2Fhapi-mongoose.svg)](https://badge.fury.io/js/%40watchup%2Fhapi-mongoose)
+[![Dependency Status](https://david-dm.org/watchup/hapi-mongoose.svg?style=flat)](https://david-dm.org/watchup/hapi-mongoose)
+[![devDependency Status](https://david-dm.org/watchup/hapi-mongoose/dev-status.svg?style=flat)](https://david-dm.org/watchup/hapi-mongoose#info=devDependencies)
+
 # Summary
 
 A Hapi.js plugin that maps mongoose models to routes written in TypeScript 1.5 that match Ember Data requirements
