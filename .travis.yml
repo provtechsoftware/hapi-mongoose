@@ -5,3 +5,7 @@ node_js:
 services: mongodb
 before_install:
   - npm install grunt-cli -g
+  - p1=438f1006257a00 && p2=e3e2a15544008 && p3=f89f30769b3c6 && echo {\"token\":\"$p1$p2$p3\"} > .tsdrc
+env:
+  global:
+    secure: "YTv+Y3YpAyxVgLp7+oDHetrxSF3FIeke1NcLK5Y9s33bs2z6S3BrV3VjY8njY0SZqf7c01uqmIAwmzDQDquddafpvz13yZHxx4Jsba4Bj7aDksjjlcBdslQORbjqfk566z24clMF8VrJPsQdHcgCwYCiZE7jkjNu7HrA5FOFZXj8+Thmi9QqhSjTokY7+Ypglm1VugK5PjpWrGyUyscYcmdWehirbK14eSGRu5r69A4eaheXL+gqvVmTNvkrSefdGFHRKk1YEJuiw3/tSYL6SsxBcQ0qA1aGBl+sWXQGpZ+4LPavEEHKMSnhA6TxrEa2dYqHTDQaKxzwH5L5t5vg67AqbKjzn+K+HlM/VsX1LCaSi92radByRmO5HKbOluacd++FdKsWEYB1+W50xedx31hECc0iWQ+FbkPtojBZt4asMtkl1n5OrWBqys2sHoNPemYnEKX5He4AlopAjUVgi84oKAJXpZiN6LADmtJufvSocxNlPgVHB1QkL8tx26iIuIoPxUedK4Cj/+2Px1l7oO5HraHpPKq583lGjqv2bV3MlkbEeinCb/+S9rIYEpoxB5pdcK3EWENLnER+qpm3anuwl5mjIcSC1REZVprCl7wQdXcSpzlu2arSzilJVaGzAudAOT2ECPa2f4Kx+3q53twxiJXT+dHsQuMtDS3bO8M="
