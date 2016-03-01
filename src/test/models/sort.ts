@@ -72,7 +72,7 @@ describe('GET sorting', () => {
           let result = JSON.parse(res.result);
           let oldValue = -1;
 
-          _.each(_.pluck(result.testmodelsortings, 'index'), (value: number) => {
+          _.each(_.map(result.testmodelsortings, 'index'), (value: number) => {
             value.should.be.above(oldValue);
             oldValue = value;
           });
@@ -88,7 +88,7 @@ describe('GET sorting', () => {
           let result = JSON.parse(res.result);
           let oldValue = 10;
 
-          _.each(_.pluck(result.testmodelsortings, 'index'), (value: number) => {
+          _.each(_.map(result.testmodelsortings, 'index'), (value: number) => {
             value.should.be.below(oldValue);
             oldValue = value;
           });
@@ -157,7 +157,7 @@ describe('GET sorting', () => {
           let result = JSON.parse(res.result);
           let oldValue = -1;
 
-          _.each(_.pluck(result.testmodelaliassortings, 'aliasedIndex'), (value: number) => {
+          _.each(_.map(result.testmodelaliassortings, 'aliasedIndex'), (value: number) => {
             value.should.be.above(oldValue);
             oldValue = value;
           });
@@ -173,7 +173,7 @@ describe('GET sorting', () => {
           let result = JSON.parse(res.result);
           let oldValue = 10;
 
-          _.each(_.pluck(result.testmodelaliassortings, 'aliasedIndex'), (value: number) => {
+          _.each(_.map(result.testmodelaliassortings, 'aliasedIndex'), (value: number) => {
             value.should.be.below(oldValue);
             oldValue = value;
           });
