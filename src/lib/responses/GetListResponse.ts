@@ -23,9 +23,39 @@ export class GetListResponse extends GetResponse {
     this._paginationQuery = query;
     this._validator = new GetListRequestValidator(this._request);
 
+    this.__applyRange();
     this.__applySorting();
     this.__applyPagination();
   }
+
+
+  private __applyRange: any = () => {
+    // Range param have to be: range[date__gt]=<iso date string>
+    if (this._request.query.range) {
+      let rangeConditions = [];
+      for (let key of this._request.query.range) {
+        if (key.includes('__')) {
+          let comps = key.split('__');
+          let field = comps[0], op = comps[1];
+          let value = this._request.query.range[key];
+          if (field && op && value && this._resource.canSortBy(field)) {
+            field = this._resource.unaliasKey(field);
+            let cond = {};
+            cond[field] = {};
+            cond[field]['$' + op] = new Date(value);
+            rangeConditions.push(cond);
+          } else {
+            this._lastError = boom.badRequest('bad range field');
+          }
+        }
+      }
+      if (rangeConditions.length > 1) {
+        this._query.and(rangeConditions);
+      } else if (rangeConditions.length === 1) {
+        this._query.where(rangeConditions[0]);
+      }
+    }
+  };
 
   private __applySorting: any = () => {
     if (this._request.query.sort) {
