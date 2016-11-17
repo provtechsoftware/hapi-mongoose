@@ -18,7 +18,7 @@ module.exports = function (grunt) {
       }
     },
     ts: {
-      default: grunt.file.readJSON('tsconfig.json')['compilerOptions'],
+      default: grunt.file.readJSON('tsconfig.json')['compilerOptions']
     },
     tslint: {
       options: {
