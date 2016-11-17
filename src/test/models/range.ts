@@ -19,7 +19,7 @@ import * as _ from 'lodash';
 import * as testServer from '../testServer';
 import Resource from '../../lib/resource';
 
-describe('GET sorting', () => {
+describe('GET ranging', () => {
   var server: testServer.Server;
   var now: Date;
   const MSECS_PER_DAY = 24 * 3600 * 1000;
@@ -71,7 +71,7 @@ describe('GET sorting', () => {
       server.createRequest()
         .get('/testmodelranging?range[date__gt]=' + startingFrom.toISOString() + '&range[date__lt]=' + endingTo.toISOString())
         .then((res: any, done: MochaDone) => {
-          let result = JSON.parse(res.result);
+          let result = JSON.parse(res.result).testmodelranging;
           let third, forth;
 
           result.should.to.have.lengthOf(2);
@@ -84,5 +84,13 @@ describe('GET sorting', () => {
         })
         .end(done);
     });
+
+    it('should return 400 on invalid range date field', (done: MochaDone) => {
+      server.createRequest()
+        .get('/testmodelranging?range[badfieldname__gte]=' + now.toISOString())
+        .thenStatusCodeShouldEqual(400)
+        .end(done);
+    });
+
   });
 });
