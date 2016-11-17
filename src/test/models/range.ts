@@ -85,10 +85,10 @@ describe('GET ranging', () => {
         .end(done);
     });
 
-    it('should return 400 on invalid range date field', (done: MochaDone) => {
+    it('should return 404 on invalid range date field', (done: MochaDone) => {
       server.createRequest()
         .get('/testmodelranging?range[badfieldname__gte]=' + now.toISOString())
-        .thenStatusCodeShouldEqual(400)
+        .thenStatusCodeShouldEqual(404)
         .end(done);
     });
 
