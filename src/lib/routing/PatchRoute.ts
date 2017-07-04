@@ -14,7 +14,7 @@ import ABaseRoute from './ABaseRoute';
 export default class PatchRoute extends ABaseRoute {
 
   constructor(basePath: string, resource: Resource, plugin: HapiPlugin) {
-    super('PATCH', basePath, resource, plugin);
+    super('PATCH', basePath, resource, plugin, resource.options.auth.getList);
 
     this.path = path.join(basePath, this._resource.options.name.plural, '{id}');
 

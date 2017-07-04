@@ -44,6 +44,14 @@ export default class Resource {
       fieldProjection: {},
       pagination: {
         limit: 10
+      },
+      auth: {
+        getList: false,
+        getItem: false,
+        post: false,
+        put: false,
+        patch: false,
+        delete: false,
       }
     };
 

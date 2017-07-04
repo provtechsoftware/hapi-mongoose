@@ -1,6 +1,5 @@
 .DS_Store
 .settings
-dist
 .tscache/
 node_modules/
 .idea

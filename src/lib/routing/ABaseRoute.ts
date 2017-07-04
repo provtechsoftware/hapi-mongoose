@@ -14,11 +14,13 @@ export default class ABaseRoute {
   public path: string;
   protected _model: mongoose.Model<mongoose.Document>;
   protected _resource: Resource;
+  protected auth: any;
 
-  constructor(method: string, basePath: string, resource: Resource, plugin: plugin.HapiPlugin) {
+  constructor(method: string, basePath: string, resource: Resource, plugin: plugin.HapiPlugin, auth: any) {
     this.method = method;
     this._model = resource.model;
     this._resource = resource;
+    this.auth = auth;
   }
 
   public handler(request: hapi.Request, reply: hapi.IReply): void {
@@ -29,7 +31,10 @@ export default class ABaseRoute {
     return {
       method: this.method,
       path: this.path,
-      handler: this.handler
+      handler: this.handler,
+      config: {
+        auth: this.auth
+      }
     };
   }
 }
