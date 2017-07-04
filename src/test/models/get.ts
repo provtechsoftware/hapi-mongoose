@@ -83,7 +83,7 @@ describe('Getting records', () => {
         .end(done);
     });
 
-    it('requested list should be wraped in an object with the plural model name', (done: MochaDone) => {
+    it('requested list should be wrapped in an object with the plural model name', (done: MochaDone) => {
       server.createRequest()
         .get('/api/testpathmodels')
         .then((res: any, done: MochaDone) => {
@@ -115,7 +115,7 @@ describe('Getting records', () => {
         testModel.remove({}, done);
       });
 
-      it('should be able to retreive all elements', (done: MochaDone) => {
+      it('should be able to retrieve all elements', (done: MochaDone) => {
         server.createRequest()
           .get('/api/testpathmodels')
           .then((res: any, done: MochaDone) => {
@@ -126,7 +126,7 @@ describe('Getting records', () => {
           .end(done);
       });
 
-      it('should be able to retreive elements by id list', (done: MochaDone) => {
+      it('should be able to retrieve elements by id list', (done: MochaDone) => {
         server.createRequest()
           .get('/api/testpathmodels?ids[]=' + idList[0] + '&ids[]=' + idList[1])
           .then((res: any, done: MochaDone) => {
@@ -152,7 +152,7 @@ describe('Getting records', () => {
         });
       });
 
-      it('should be able to retreive elements by id', (done: MochaDone) => {
+      it('should be able to retrieve elements by id', (done: MochaDone) => {
         testModel.findOne({ name: 'item0' }, (err: any, record: any) => {
           let id = record.get('id');
           server.createRequest()
@@ -174,7 +174,7 @@ describe('Getting records', () => {
           .end(done);
       });
 
-      it('should return 404 for inexistent ids', (done: MochaDone) => {
+      it('should return 404 for nonexistent ids', (done: MochaDone) => {
         server.createRequest()
           .get('/api/testpathmodels/aaaaaaaaaaaaaaaaaaaaaaaa')
           .thenStatusCodeShouldEqual(404)

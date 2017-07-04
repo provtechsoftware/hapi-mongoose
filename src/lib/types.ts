@@ -22,7 +22,16 @@ type IResourceOptions = {
   pagination?: {
     limit: number
   },
-  alias?: HashMapString
+  alias?: HashMapString,
+  fieldProjection?: HashMapBoolean,
+  auth?: {
+    getList: any,
+    getItem: any,
+    post: any,
+    put: any,
+    patch: any,
+    delete: any,
+  }
 }
 
 type IResourceOptionsExpanded = {
@@ -43,7 +52,15 @@ type IResourceOptionsExpanded = {
   pagination: {
     limit: number
   },
-  alias: HashMapString
+  alias: HashMapString,
+  auth: {
+    getList: any,
+    getItem: any,
+    post: any,
+    put: any,
+    patch: any,
+    delete: any,
+  }
 }
 
 type serialisationResultHandler = (serialisedData: string) => void;

@@ -14,7 +14,7 @@ import ABaseRoute from './ABaseRoute';
 export default class PutRoute extends ABaseRoute {
 
   constructor(basePath: string, resource: Resource, plugin: HapiPlugin) {
-    super('PUT', basePath, resource, plugin);
+    super('PUT', basePath, resource, plugin, resource.options.auth.getList);
 
     this.path = path.join(basePath, this._resource.options.name.plural, '{id}');
 

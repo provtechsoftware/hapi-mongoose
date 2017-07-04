@@ -15,7 +15,7 @@ export default class DeleteRoute extends ABaseRoute {
 
 
   constructor(basePath: string, resource: Resource, plugin: HapiPlugin) {
-    super('DELETE', basePath, resource, plugin);
+    super('DELETE', basePath, resource, plugin, resource.options.auth.delete);
 
     this.path = path.join(basePath, this._resource.options.name.plural, '{id}');
     this.handler = (request: hapi.Request, reply: hapi.IReply) => {

@@ -1,40 +1,39 @@
 {
-    "version": "1.5.0-beta",
-    "compilerOptions": {
-        "options": {
-            "module": "commonjs",
-            "declaration": "true"
-        },
-        "target": "es5",
-        "module": "commonjs",
-        "declaration": false,
-        "noImplicitAny": false,
-        "removeComments": true,
-        "noLib": false,
-        "preserveConstEnums": true,
-        "suppressImplicitAnyIndexErrors": true,
-        "outDir": "dist/",
-        "src": [
-            "src/**/*.ts",
-            "typings/**/*.ts"
-        ]
+  "version": "1.5.0-beta",
+  "compilerOptions": {
+    "options": {
+      "module": "commonjs",
+      "declaration": "true",
+      "noImplicitAny": false,
+      "target": "es5",
+      "declaration": false,
+      "removeComments": true,
+      "noLib": false,
+      "preserveConstEnums": true,
+      "suppressImplicitAnyIndexErrors": true
     },
-    "filesGlob": [
-        "./src/**/*.ts",
-        "!./node_modules/**/*.ts"
-    ],
-    "files": [
-        "./src/lib/index.ts",
-        "./src/lib/resource.ts",
-        "./src/lib/routing.ts",
-        "./src/test/access/methods.ts",
-        "./src/test/internal/jsonRecords.ts",
-        "./src/test/models/delete.ts",
-        "./src/test/models/get.ts",
-        "./src/test/models/patch.ts",
-        "./src/test/models/post.ts",
-        "./src/test/models/projection.ts",
-        "./src/test/models/put.ts",
-        "./src/test/testServer.ts"
+    "outDir": "dist/",
+    "src": [
+      "src/**/*.ts",
+      "typings/**/*.ts"
     ]
+  },
+  "filesGlob": [
+    "./src/**/*.ts",
+    "!./node_modules/**/*.ts"
+  ],
+  "files": [
+    "./src/lib/index.ts",
+    "./src/lib/resource.ts",
+    "./src/lib/routing.ts",
+    "./src/test/access/methods.ts",
+    "./src/test/internal/jsonRecords.ts",
+    "./src/test/models/delete.ts",
+    "./src/test/models/get.ts",
+    "./src/test/models/patch.ts",
+    "./src/test/models/post.ts",
+    "./src/test/models/projection.ts",
+    "./src/test/models/put.ts",
+    "./src/test/testServer.ts"
+  ]
 }

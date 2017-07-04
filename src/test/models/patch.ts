@@ -123,7 +123,7 @@ describe('Updating records (PATCH)', () => {
       .end(done);
   });
 
-  it('should return 404 for inexistent ids', (done: MochaDone) => {
+  it('should return 404 for nonexistent ids', (done: MochaDone) => {
     test.server.createRequest()
       .payload('patchmodeltest', { name: 'second' })
       .patch('/patchmodeltests/aaaaaaaaaaaaaaaaaaaaaaaa')
@@ -131,7 +131,7 @@ describe('Updating records (PATCH)', () => {
       .end(done);
   });
 
-  it('should return 404 for inexistent ids and if-match header is present', (done: MochaDone) => {
+  it('should return 404 for nonexistent ids and if-match header is present', (done: MochaDone) => {
     test.server.createRequest()
       .payload('patchmodeltest', { name: 'second' })
       .header('If-Match', '"v:9999"')
@@ -151,7 +151,7 @@ describe('Updating records (PATCH)', () => {
     });
   });
 
-  it('should return 400 for queries with unwraped payload', (done: MochaDone) => {
+  it('should return 400 for queries with unwrapped payload', (done: MochaDone) => {
     let item = new test.model({ name: 'first', value: 'some value' });
     item.save(() => {
       test.server.createRequest()

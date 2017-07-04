@@ -16,7 +16,7 @@ import * as _ from 'lodash';
 export default class GetListRoute extends ABaseRoute {
 
   constructor(basePath: string, resource: Resource, plugin: HapiPlugin) {
-    super('GET', basePath, resource, plugin);
+    super('GET', basePath, resource, plugin, resource.options.auth.getList);
 
     this.path = path.join(basePath, this._resource.options.name.plural);
     this.handler = (request: hapi.Request, reply: hapi.IReply) => {

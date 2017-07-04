@@ -113,14 +113,14 @@ describe('Deleting records', () => {
       .end(done);
   });
 
-  it('should return 404 for inexistent ids', (done: MochaDone) => {
+  it('should return 404 for nonexistent  ids', (done: MochaDone) => {
     test.server.createRequest()
       .delete('/deletemodeltests/aaaaaaaaaaaaaaaaaaaaaaaa')
       .thenStatusCodeShouldEqual(404)
       .end(done);
   });
 
-  it('should return 404 for inexistent ids when if-match header is set', (done: MochaDone) => {
+  it('should return 404 for nonexistent ids when if-match header is set', (done: MochaDone) => {
     test.server.createRequest()
       .header('If-Match', '"v:9999"')
       .delete('/deletemodeltests/aaaaaaaaaaaaaaaaaaaaaaaa')
